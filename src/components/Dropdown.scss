@@ -1,0 +1,58 @@
+.dropdown {
+    position: relative;
+    width: 30%;
+    margin-top: 10px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid gray;
+    &-btn {
+        position: relative;
+    }
+    &-content {
+        position: absolute;
+        background-color: white;
+        width: 100%;
+        z-index: 2;
+        top: 26px;
+        border: 1px solid gray;
+        border-radius: 5px;
+        &-plus-form {
+            display: flex;
+            flex-direction: column;
+        }
+        span {
+            margin: 0 5px;
+        }
+        &-plus:before {     
+            content: '+';
+            color: darkred;
+            text-align: end;   
+            display: block;
+        }
+        &-plus:hover:before {
+            transition: transform 0.5s;
+            transform: rotate(180deg); 
+            transform-origin: 96% 56% 0;        
+        }
+        div:hover {
+            background-color: rgb(246, 246, 246); 
+        }
+        input {
+            width: 95%;
+        }
+        button {
+            color: white;
+            background-color: darkred;
+            outline: none;
+            border: none;    
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: rgb(202, 5, 5);
+        }
+        button:active {
+            color: darkred;
+            background-color: rgb(206, 206, 206);
+        }
+    }
+}
