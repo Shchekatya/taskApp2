@@ -3,9 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { DELETE_TASKS, SORT_TASKS } from "../redux/actions/actions";
 import { taskSelector } from "../redux/taskReducer/selector";
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
-const TaskList = () => {
+const TaskList = () => {  
   const taskArr = useSelector(taskSelector); 
   const [directionSort, setDirectionSort] = useState(true);
   const dispatch = useDispatch();
@@ -46,14 +47,14 @@ const TaskList = () => {
                
              </div>
           {taskArr.map(task => (
-             <div key={task.id} className='task-string'> 
+             <Link to={`/task/${task.id}`} key={task.id} className='task-string'> 
                 <div>{task.data}</div>
                 <div>{task.text}</div>
                 <div>{task.category}</div>
                 <div>{task.deadline}</div>
                     <button className='del-button' onClick={() => deleteTask(task.id)}>+</button> 
                
-             </div>
+             </Link>
           ))}
         </div>
     );
