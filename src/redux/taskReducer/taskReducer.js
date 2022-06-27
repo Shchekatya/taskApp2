@@ -1,4 +1,4 @@
-import { ADD_TASKS, DELETE_TASKS, SORT_TASKS } from "../actions/actions";
+import { ADD_TASKS, DELETE_TASKS, SORT_TASKS, EDIT_TASKS } from "../actions/actions";
 
 const initialState = {
     tasks: [
@@ -30,7 +30,21 @@ export const taskReducer = (state=initialState, action) => {
             return {
                 ...state,
                 tasks: state.tasks.filter(item => item.id !== action.payload)
-            }     
+            }    
+        case EDIT_TASKS:            
+                const taskItem = state.tasks.find(item => item.id === action.payload.id)
+                const taskIndex=state.tasks.findIndex(item => item.id === action.payload.id)
+                taskItem.text=action.payload.text
+                console.log(taskItem)
+                return {
+                    ...state,
+                    tasks: [
+                        ...state.tasks.slice(0, taskIndex),
+                        taskItem,
+                        ...state.tasks.slice(taskIndex+1),
+                    ]
+                }  
+              
         case SORT_TASKS:
            const tasksCopy= state.tasks.map(a => a)
            if (action.payload.sort === 'date') {

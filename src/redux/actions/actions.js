@@ -1,5 +1,6 @@
 export const ADD_TASKS="ADD_TASKS";
 export const DELETE_TASKS="DELETE_TASKS";
 export const SORT_TASKS="SORT_TASKS";
+export const EDIT_TASKS="EDIT_TASKS";
 export const ADD_CATEGORY="ADD_CATEGORY";
 export const DELETE_CATEGORY="DELETE_CATEGORY";

@@ -47,14 +47,15 @@ const TaskList = () => {
                
              </div>
           {taskArr.map(task => (
-             <Link to={`/task/${task.id}`} key={task.id} className='task-string'> 
+             <div  key={task.id} className='task-string'> 
                 <div>{task.data}</div>
-                <div>{task.text}</div>
+                <div>
+                  <Link to={`/task/${task.id}`}>{task.text}</Link></div>
                 <div>{task.category}</div>
                 <div>{task.deadline}</div>
                     <button className='del-button' onClick={() => deleteTask(task.id)}>+</button> 
                
-             </Link>
+             </div>
           ))}
         </div>
     );
