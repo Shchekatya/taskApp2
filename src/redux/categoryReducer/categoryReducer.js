@@ -25,7 +25,7 @@ export const categoryReducer = (state = initialState, action) => {
                 ...state,
                 category: state.category.filter(item => item.id !== action.payload)
             }
-        default: 
-        return state
+        default:
+            return state
     }
 }

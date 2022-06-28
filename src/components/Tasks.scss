@@ -1,39 +1,40 @@
 form {
-   // border: 1px solid red;
-    display: flex;
-    justify-content: space-between;  
-   flex-wrap: wrap;
+  // border: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
   width: 50%;
   margin: 15px auto;
   textarea {
     width: 100%;
     border-radius: 5px;
     outline: none;
-    border: 1px solid gray; 
+    border: 1px solid gray;
   }
-  select, input, .add-button {
+  select,
+  input,
+  .add-button {
     width: 30%;
     margin-top: 10px;
     border-radius: 5px;
     outline: none;
-    border: 1px solid gray; 
+    border: 1px solid gray;
   }
   .add-button {
     color: white;
     background-color: darkred;
     outline: none;
-    border: none;     
+    border: none;
   }
   .add-button:hover {
-    background-color: rgb(202, 5, 5); 
-}
-.add-button:active {
+    background-color: rgb(202, 5, 5);
+  }
+  .add-button:active {
     color: darkred;
     background-color: rgb(206, 206, 206);
-}
-
+  }
 }
 
 h3 {
-   text-align: center;   
+  text-align: center;
 }

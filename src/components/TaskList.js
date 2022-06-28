@@ -6,59 +6,59 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 
-const TaskList = () => {  
-  const taskArr = useSelector(taskSelector); 
+const TaskList = () => {
+  const taskArr = useSelector(taskSelector);
   const [directionSort, setDirectionSort] = useState(true);
   const dispatch = useDispatch();
   const deleteTask = (id) => {
     dispatch({
-        type: DELETE_TASKS,
-        payload: id
+      type: DELETE_TASKS,
+      payload: id
     })
   };
 
-  const sortTask = (sort) => {   
-    const obj ={
+  const sortTask = (sort) => {
+    const obj = {
       sort: sort,
       ab: directionSort,
-    } 
-      dispatch({
-        type: SORT_TASKS, 
-        payload: obj
-    })       
-    setDirectionSort(!directionSort) 
+    }
+    dispatch({
+      type: SORT_TASKS,
+      payload: obj
+    })
+    setDirectionSort(!directionSort)
   }
-  
-    return (
-        <div className='task-list'>
-          <h3>Your task list</h3>
-            <div className='task-header'>
-                <div onClick={()=>sortTask('date')}>
-                  Date of creation</div>
-                <div onClick={()=>sortTask('text')}>
-                  Task text                
-                </div>
-                <div onClick={()=>sortTask('category')}>
-                  Category               
-                </div>
-                <div onClick={()=>sortTask('deadline')}>Deadline              
-                </div>
-                <div></div>
-               
-             </div>
-          {taskArr.map(task => (
-             <div  key={task.id} className='task-string'> 
-                <div>{task.data}</div>
-                <div>
-                  <Link to={`/task/${task.id}`}>{task.text}</Link></div>
-                <div>{task.category}</div>
-                <div>{task.deadline}</div>
-                    <button className='del-button' onClick={() => deleteTask(task.id)}>+</button> 
-               
-             </div>
-          ))}
+
+  return (
+    <div className='task-list'>
+      <h3>Your task list</h3>
+      <div className='task-header'>
+        <div onClick={() => sortTask('date')}>
+          Date of creation</div>
+        <div onClick={() => sortTask('text')}>
+          Task text
         </div>
-    );
+        <div onClick={() => sortTask('category')}>
+          Category
+        </div>
+        <div onClick={() => sortTask('deadline')}>Deadline
+        </div>
+        <div></div>
+
+      </div>
+      {taskArr.map(task => (
+        <div key={task.id} className='task-string'>
+          <div>{task.data}</div>
+          <div>
+            <Link to={`/task/${task.id}`}>{task.text}</Link></div>
+          <div>{task.category}</div>
+          <div>{task.deadline}</div>
+          <button className='del-button' onClick={() => deleteTask(task.id)}>+</button>
+
+        </div>
+      ))}
+    </div>
+  );
 };
 
 export default TaskList;
