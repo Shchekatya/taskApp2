@@ -23,19 +23,23 @@
         span {
             margin: 0 5px;
         }
-        &-plus:before {     
-            content: '+';
-            color: darkred;
-            text-align: end;   
-            display: block;
+        &-plus {
+            padding-right: 5px;
+            &:before {
+                content: "+";
+                color: darkred;
+                text-align: end;
+                display: block;
+            }
         }
+
         &-plus:hover:before {
             transition: transform 0.5s;
-            transform: rotate(180deg); 
-            transform-origin: 96% 56% 0;        
+            transform: rotate(180deg);
+            transform-origin: 96% 56% 0;
         }
         div:hover {
-            background-color: rgb(246, 246, 246); 
+            background-color: rgb(246, 246, 246);
         }
         input {
             width: 95%;
@@ -44,7 +48,7 @@
             color: white;
             background-color: darkred;
             outline: none;
-            border: none;    
+            border: none;
             border-radius: 5px;
         }
         button:hover {

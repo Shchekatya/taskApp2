@@ -1,0 +1,29 @@
+.task-single {
+    border-radius: 10px;
+    margin: 20px auto;
+    width: 50%;
+    box-shadow: 0 0 5px grey;
+    padding: 10px;
+    &-text {
+        margin: 20px 0;
+
+        form {
+            margin: 0;
+            width: 100%;
+            input {
+                margin: 0;
+                border: none;
+                outline: none;
+                font-size: 1em;
+                &::placeholder {
+                    color: black;
+                    font-size: 1em;
+                }
+            }
+        }
+    }
+    &-cat {
+        display: flex;
+        justify-content: space-between;
+    }
+}
