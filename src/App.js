@@ -10,9 +10,9 @@ import SingleTask from './components/SingleTask';
 function App() {
   return (
       <Routes>
-        <Route path='/' element={<Header />} >
+        <Route path='/' element={<Header />} >          
+          <Route path='/' element={<Tasks />} />
           <Route path='/about' element={<About />} />
-          <Route path='/task' element={<Tasks />} />
           <Route path='/task/:id' element={<SingleTask />} />        
           <Route path='*' element={<NotFound />} />
         </Route>        

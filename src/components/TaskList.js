@@ -5,7 +5,6 @@ import { taskSelector } from "../redux/taskReducer/selector";
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-
 const TaskList = () => {
   const taskArr = useSelector(taskSelector);
   const [directionSort, setDirectionSort] = useState(true);
@@ -50,7 +49,7 @@ const TaskList = () => {
         <div key={task.id} className='task-string'>
           <div>{task.data}</div>
           <div>
-            <Link to={`/task/${task.id}`}>{task.text}</Link></div>
+            <Link to={`/task/${task.id}`} >{task.text}</Link></div>
           <div>{task.category}</div>
           <div>{task.deadline}</div>
           <button className='del-button' onClick={() => deleteTask(task.id)}>+</button>

@@ -1,13 +1,14 @@
 import './SingleTask.scss'
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from "react-redux";
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { EDIT_TASKS } from '../redux/actions/actions';
 import { taskSelector } from "../redux/taskReducer/selector";
 
 const SingleTask = () => {
     const dispatch = useDispatch();
     const taskArr = useSelector(taskSelector);
+    const navigate=useNavigate();
     const { id } = useParams();
     const showTask = taskArr.find(task => task.id === Number(id));
     const [text, setText] = useState(showTask.text);
@@ -25,6 +26,7 @@ const SingleTask = () => {
     }
 
     return (
+        <>
         <div className='task-single'>
 
             <div className='task-single-header'>
@@ -48,12 +50,10 @@ const SingleTask = () => {
                     Category:  {showTask.category}
                 </div>
             </div>
-
-
-
-
-
         </div>
+        <button onClick={() => {          
+              navigate(-1)}}>Назад</button>
+        </>
     );
 };
 
