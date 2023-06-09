@@ -1,8 +1,8 @@
 import './Dropdown.scss';
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { ADD_CATEGORY } from '../redux/actions/actions';
-import { categorySelector } from '../redux/categoryReducer/selector';
+import { ADD_CATEGORY } from '../../redux/actions/actions';
+import { categorySelector } from '../../redux/categoryReducer/selector';
 
 
 function Dropdown({ selected, setSelected }) {

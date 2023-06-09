@@ -2,9 +2,13 @@ import './Header.scss'
 import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 
+
+
+
 const Header = () => {
     return (
         <>
+  
             <header>
                 <div>
                     <NavLink to='/about'>About</NavLink>

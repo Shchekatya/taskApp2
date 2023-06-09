@@ -1,7 +1,7 @@
 import './TaskList.scss';
 import { useDispatch, useSelector } from "react-redux";
-import { DELETE_TASKS, SORT_TASKS } from "../redux/actions/actions";
-import { taskSelector } from "../redux/taskReducer/selector";
+import { DELETE_TASKS, SORT_TASKS } from "../../redux/actions/actions";
+import { taskSelector } from "../../redux/taskReducer/selector";
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 

@@ -1,11 +1,10 @@
 import './App.scss';
 import { Route, Routes } from 'react-router-dom';
-import About from './components/About';
-import Tasks from './components/Tasks';
-import Header from './components/Header';
-import NotFound from './components/NotFound';
-import SingleTask from './components/SingleTask';
-
+import About from './pages/About';
+import Tasks from './pages/Tasks';
+import Header from './components/header/Header';
+import NotFound from './pages/NotFound';
+import SingleTask from './pages/SingleTask';
 
 function App() {
   return (

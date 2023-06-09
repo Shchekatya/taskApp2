@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate, useParams } from 'react-router-dom';
 import { EDIT_TASKS } from '../redux/actions/actions';
 import { taskSelector } from "../redux/taskReducer/selector";
+import { Button } from '@mui/material';
 
 const SingleTask = () => {
     const dispatch = useDispatch();
@@ -51,8 +52,9 @@ const SingleTask = () => {
                 </div>
             </div>
         </div>
-        <button onClick={() => {          
-              navigate(-1)}}>Назад</button>
+        <Button variant="outlined" onClick={() => {          
+              navigate(-1)}}>Назад</Button>
+      
         </>
     );
 };

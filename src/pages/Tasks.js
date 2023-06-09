@@ -2,8 +2,8 @@ import './Tasks.scss'
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { ADD_TASKS } from '../redux/actions/actions';
-import TaskList from './TaskList';
-import Dropdown from './Dropdown';
+import TaskList from '../components/task-list/TaskList';
+import Dropdown from '../components/drop-down/Dropdown';
 
 const Tasks = () => {
     const [selected, setSelected] = useState('Category')
